@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Cmponents/Header";
+import Footer from "./Cmponents/Footer";
+import Todos from "./Cmponents/Todos";
+// ! importing states HOOK
+import React, { useState } from "react";
 
 function App() {
+  // todo: function to delete todo
+  const onDelete = (todo) => {
+    console.log("i am deleted todo", todo);
+
+    // ! using setTodos method
+    setTodos(
+      todos.filter((e) => {
+        return e !== todo;
+      })
+    );
+  };
+
+  // todo: to array *
+  // ! using usestate hook
+  const [todos, setTodos] = useState([
+    {
+      srno: 1,
+      title: "make mern app",
+      desc: "make mern food app for project",
+    },
+    {
+      srno: 2,
+      title: "Read book",
+      desc: "Read book reach dad poor dad",
+    },
+    {
+      srno: 3,
+      title: "Play cards",
+      desc: "Play card with friends",
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header title="My To Do List" />
+      <Todos todos={todos} onDelete={onDelete} />
+      <Footer />
     </div>
   );
 }

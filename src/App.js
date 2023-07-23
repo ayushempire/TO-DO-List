@@ -4,6 +4,7 @@ import Footer from "./Cmponents/Footer";
 import Todos from "./Cmponents/Todos";
 // ! importing states HOOK
 import React, { useState } from "react";
+import Addtodo from "./Cmponents/Addtodo";
 
 function App() {
   // todo: function to delete todo
@@ -36,11 +37,27 @@ function App() {
       title: "Play cards",
       desc: "Play card with friends",
     },
+    {
+      srno: 4,
+      title: "Play cards",
+      desc: "Play card with friends",
+    },
+    {
+      srno: 5,
+      title: "Play cards",
+      desc: "Play card with friends",
+    },
+    {
+      srno: 6,
+      title: "Play cards",
+      desc: "Play card with friends",
+    },
   ]);
 
   return (
     <div>
       <Header title="My To Do List" />
+      <Addtodo />
       <Todos todos={todos} onDelete={onDelete} />
       <Footer />
     </div>

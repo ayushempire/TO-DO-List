@@ -9,8 +9,11 @@ export const Addtodo = (props) => {
     e.preventDefault();
     if (!title || !desc) {
       alert("Title and Description cant be empty");
+    } else {
+      props.addTodo(title, desc);
+      setTitle("");
+      setDesc("");
     }
-    props.addTodo(title, desc);
   };
 
   return (

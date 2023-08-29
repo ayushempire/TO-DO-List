@@ -98,7 +98,7 @@ function App() {
         <Routes>
           <Route
             exact
-            path="/Home"
+            path="/"
             element={
               <>
                 <Addtodo addTodo={addTodo} />

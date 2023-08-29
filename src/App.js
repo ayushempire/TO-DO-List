@@ -79,6 +79,7 @@ function App() {
     <>
       <Router>
         <Header title="My To Do List" />
+
         {/* <Routes>
           <Route
             exact
@@ -97,7 +98,7 @@ function App() {
         <Routes>
           <Route
             exact
-            path="/"
+            path="/Home"
             element={
               <>
                 <Addtodo addTodo={addTodo} />
